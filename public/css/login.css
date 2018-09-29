@@ -1,0 +1,87 @@
+.login{
+	width: 100%;
+}
+
+.login .login_wrap{
+	width: 1280px;
+	height: 890px;
+	margin: 0 auto;
+	background: url(../img/login_bg.jpg);
+	background-size: 1280px 890px;
+	overflow: hidden;
+}
+
+.login h3{
+	color: white;
+	text-align: center;
+	margin-top: 73px;
+	line-height: 70px;
+	font-size: 30px;
+	text-shadow: 2px 2px 8px #000;
+}
+
+.clearfix:after{
+    /*添加一个内容*/
+    content: "";
+    /*转换为一个块元素*/
+    display:block;
+    /*清除浮动*/
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+
+
+
+.login .login_wrap .login-body{
+	height: 278px;
+	width: 386px;
+	margin: 0 auto;
+/*	border: 1px solid;*/
+	background: url(../img/form-bg.png);
+	background-size: 386px 278px;
+}
+
+.login-error{
+	text-align: center;
+	margin-top: 50px;
+	color: red;
+}
+
+.login-form{
+	height: 80px;
+	width: 306px;
+	margin: 0 auto;
+	margin-top:60px;
+}
+
+.login-form .form-group{
+	height: 35px;
+	margin-bottom: 14px;
+}
+
+.login-form label{
+	display: inline-block;
+	width: 60px;
+	height: 35px;
+	font-size: 12px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.login-form input{
+	float: right;
+	width: 230px;
+	border: 1px solid #cccccc;
+	height: 35px;
+	padding-left: 10px;
+}
+
+.login-footer{
+	margin-top:14px;
+	margin-left: 114px;
+}
+.login-footer button{
+	margin-right: 20px;
+}

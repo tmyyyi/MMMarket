@@ -1,0 +1,51 @@
+.user-body{
+	border: 1px solid;
+	width: 1020px;
+	min-height: 600px;
+}
+
+.user-body .list-nav{
+	width: 92%;
+	margin:2px auto 0;
+}
+
+.user-body .list-nav img{ 
+	margin-right: 10px;
+}
+
+.user-body .list-nav >span{
+	color: #2179bb;
+	font-weight: 600;
+}
+
+.usermanage-nav{
+	border: none;
+	background: #fff;
+}
+.usermanage-nav form .searchuser-btn{
+	background: #87c212;
+	color: white;
+	margin-left: 20px;
+	margin-right: 64px;
+}
+
+.usermanage-nav form .adduser-btn{
+	background: #47acf1;
+	color: white;	
+}
+.usermanage-nav form img{
+	margin-right:6px; 
+}
+
+.user-body .usermanage-table{
+	border: 1px solid;
+	width: 92%;
+	margin:0 auto;
+}
+
+
+/*修改密码*/
+.update-pwd-form{
+	width: 96%;
+	margin:2px auto 0;
+}

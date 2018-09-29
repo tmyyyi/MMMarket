@@ -1,0 +1,28 @@
+.content{
+	width: 100%;
+}
+.content_wrap{
+	width: 1260px;
+	margin: 0 auto;
+	border: 1px solid;
+	overflow: hidden;
+}
+
+.content_wrap .left{
+	width: 22%;
+	float: left;
+	height: 600px;
+	background: #ccc;
+	border-right: 1px solid blue;
+}
+
+.content_wrap .left .list-group{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.content_wrap .right{
+	width: 65%;
+	float: left;
+}

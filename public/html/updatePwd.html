@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用户管理页面</title>
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/header.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/usermanage.css">
+</head>
+<body>
+
+	<!-- 导航条 -->
+	<header></header>
+
+	<!-- 主体页面 -->
+	<div class="content">
+		<div class="content_wrap">
+			<div class="left">
+				
+			</div>
+			<div class="right">
+					<div class="user-body">
+		<ul class="list-group">
+		  <li class="list-group-item list-nav"> <img src="/img/home.png">你现在所在的位置是：<span>用户管理页面</span></li>
+		</ul>
+
+		<form class="update-pwd-form">
+			  <div class="form-group">
+			    <label for="updateOldpwd">旧密码:</label>
+			    <input type="email" class="form-control" name ="password" id="updateOldpwd" placeholder="请输入原始密码">
+			  </div>
+			  <div class="form-group">
+			    <label for="updateNewpwd">新密码:</label>
+			    <input type="password" class="form-control" name="newpassword" id="updateNewpwd" placeholder="请输入新密码">
+			  </div>
+			  <div class="form-group">
+			    <label for="updateRNewpwd">确认新密码:</label>
+			    <input type="password" class="form-control" name="newpassword2" id="updateRNewpwd" placeholder="请输入确认新密码，且保证和新密码一致">
+			  </div>
+			  <button type="submit" class="btn btn-default">保存</button>
+			</form>
+	</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+
+	<script type="text/javascript" src="/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/common/header.js"></script>
+</body>
+</html>

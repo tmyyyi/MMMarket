@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用户管理页面</title>
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/usermanage.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/usermanage.css">
+</head>
+<body>
+
+		<!-- 导航条 -->
+	<header></header>
+
+	<!-- 主体页面 -->
+	<div class="content">
+		<div class="content_wrap">
+			<div class="left">
+				
+			</div>
+
+			<div class="right">				
+				<div class="user-body">
+					<ul class="list-group">
+					  <li class="list-group-item list-nav"> <img src="/img/home.png">你现在所在的位置是：<span>用户管理页面</span></li>
+					</ul>
+				<nav class="navbar navbar-default usermanage-nav">
+		  			<div class="container-fluid">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  			<form class="navbar-form navbar-left">
+				    			<div class="form-group">
+							    	用户名：
+							      	<input type="text" class="form-control" placeholder="用户名">
+							    </div>
+				   				 <button type="button" class="btn btn-default searchuser-btn"><img src="/img/search.png">查询</button>
+				    			<button type="button" class="btn btn-default adduser-btn" data-toggle="modal" data-target="#addUserModal"><img src="/img/tianjia.png">添加用户</button>
+				  			</form>
+						</div>
+					</div>
+				</nav>
+				<!-- 表格，显示当前页职位信息 -->
+				<table class="table table-bordered table-striped table-hover usermanage-table">
+					<thead>
+						<tr>
+							<td>用户编码</td>
+							<td>用户名称</td>
+							<td>性别</td>
+							<td>年龄</td>
+							<td>电话</td>
+							<td>用户类型</td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>admin</td>
+							<td>女</td>
+							<td>2018-9-29 10:26:05</td>
+							<td>1333333333</td>
+							<td>管理员</td>
+							<td><a href="javascript:void(0);"><img src="/img/read.png"></a> 
+								<a href="javascript:void(0);"><img src="/img/updata.png"></a>
+								<a href="javascript:void(0);"><img src="/img/delete.png"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>admin</td>
+							<td>女</td>
+							<td>2018-9-29 10:26:05</td>
+							<td>666666666</td>
+							<td>管理员</td>
+							<td><a href="javascript:void(0);"><img src="/img/read.png"></a> 
+								<a href="javascript:void(0);"><img src="/img/updata.png"></a>
+								<a href="javascript:void(0);"><img src="/img/delete.png"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- 分页 -->
+				<nav class="usermanage-nav">
+				  <ul class="pagination">
+				    <li class="disabled">
+				      <a href="#">
+				        <span>&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="active"><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+
+
+
+			</div>
+		</div>		
+	</div>
+
+
+
+
+
+
+<!-- 添加用户的模态框 -->
+	<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog">
+	    <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+		        	<h4 class="modal-title" id="addPosModalLabel">添加用户</h4>
+		      	</div>
+	      		<div class="modal-body">
+	      			<div class="alert alert-danger hidden login-error">添加失败</div>
+	        		<form class="add-user-form">
+			          	<div class="form-group">
+					    	<label for="addUserCode">用户编码</label>
+					    	<input type="text" class="form-control" name="usercode" id="addUserCode" placeholder="请输入用户编码">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="addUsername">用户名称</label>
+					    	<input type="text" class="form-control" name="username" id="addUsername" placeholder="请输入用户名称">
+					  	</div>
+			  			<div class="form-group">
+					    	<label for="addUsersex">用户性别</label>
+					    	<input type="text" class="form-control" name="usersex" id="addUsersex" placeholder="请输入用户性别">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="addUserbirth">出生日期</label>
+					    	<input type="text" class="form-control" name="birth" id="addUserbirth" placeholder="请输入出生日期">
+					 	 </div>
+					  	<div class="form-group">
+					    	<label for="addUsertel">用户电话</label>
+					    	<input type="text" class="form-control" name="tel" id="addUsertel" placeholder="请输入用户电话">
+					  	</div>
+					  	<div class="form-group">
+					  		<label for="addUsertype">用户类型</label>
+					  			<label class="radio-inline">
+						  			<input type="radio" name="usertype" id="addUsertype1" value="option1">管理员
+								</label>
+							<label class="radio-inline">
+						  		<input type="radio" name="usertype" id="addUsertype2" value="option2">经理
+							</label>
+							<label class="radio-inline">
+						  		<input type="radio" name="usertype" id="addUsertype3" value="option3">普通用户
+							</label>
+					  	</div>	
+					</form>
+	      		</div>
+
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        	<button type="button" class="btn btn-primary btn-add-pos">添加</button>
+		      	</div>
+		    </div>
+	  	</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/common/header.js"></script>
+</body>
+</html>
