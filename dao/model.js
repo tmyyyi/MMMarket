@@ -9,8 +9,18 @@ const userSchema = new mongoose.Schema({
 	username: String,
 	password: String
 });
+const adminSchema = new mongoose.Schema({
+	usercode: Number,
+	username: String,
+	usersex: String,
+	birth: Date,
+	tel: Number,
+	usertype: String
+});
 
 //根据用户Schema创建用户模型
 const User = mongoose.model("user",userSchema);
+//根据管理用户Schema创建用户模型
+const Admin = mongoose.model("admin", adminSchema);
 
-module.exports = {User};
+module.exports = {User,Admin};

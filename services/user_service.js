@@ -31,7 +31,8 @@ const UserService = {
 	},
 	// 注销
 	logout(req, res, next) {
-
+		req.session.loginUser = null;
+		res.json({res_code:1});
 	}
 }
 

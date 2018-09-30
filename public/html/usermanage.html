@@ -53,7 +53,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<!-- <tr>
 							<td>1</td>
 							<td>admin</td>
 							<td>女</td>
@@ -76,7 +76,7 @@
 								<a href="javascript:void(0);"><img src="/img/updata.png"></a>
 								<a href="javascript:void(0);"><img src="/img/delete.png"></a>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 
@@ -146,13 +146,13 @@
 					  	<div class="form-group">
 					  		<label for="addUsertype">用户类型</label>
 					  			<label class="radio-inline">
-						  			<input type="radio" name="usertype" id="addUsertype1" value="option1">管理员
+						  			<input type="radio" name="usertype" id="addUsertype1" value="管理员">管理员
 								</label>
 							<label class="radio-inline">
-						  		<input type="radio" name="usertype" id="addUsertype2" value="option2">经理
+						  		<input type="radio" name="usertype" id="addUsertype2" value="经理">经理
 							</label>
 							<label class="radio-inline">
-						  		<input type="radio" name="usertype" id="addUsertype3" value="option3">普通用户
+						  		<input type="radio" name="usertype" id="addUsertype3" value="普通用户">普通用户
 							</label>
 					  	</div>	
 					</form>
@@ -160,7 +160,7 @@
 
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		        	<button type="button" class="btn btn-primary btn-add-pos">添加</button>
+		        	<button type="button" class="btn btn-primary btn-add-admin">添加</button>
 		      	</div>
 		    </div>
 	  	</div>
@@ -170,7 +170,59 @@
 
 
 
+<!-- 修改用户的模态框 -->
+	<div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog">
+	    <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+		        	<h4 class="modal-title" id="updatePosModalLabel">修改用户资料</h4>
+		      	</div>
+	      		<div class="modal-body">
+	      			<div class="alert alert-danger hidden login-error">修改失败</div>
+	        		<form class="update-user-form">
+			          	<div class="form-group">
+					    	<label for="updateUserCode">用户编码</label>
+					    	<input type="text" class="form-control" name="usercode" id="updateUserCode">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="updateUsername">用户名称</label>
+					    	<input type="text" class="form-control" name="username" id="updateUsername">
+					  	</div>
+			  			<div class="form-group">
+					    	<label for="updateUsersex">用户性别</label>
+					    	<input type="text" class="form-control" name="usersex" id="updateUsersex" placeholder="请输入用户性别">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="updateUserbirth">出生日期</label>
+					    	<input type="text" class="form-control" name="birth" id="updateUserbirth" placeholder="请输入出生日期">
+					 	 </div>
+					  	<div class="form-group">
+					    	<label for="updateUsertel">用户电话</label>
+					    	<input type="text" class="form-control" name="tel" id="updateUsertel" placeholder="请输入用户电话">
+					  	</div>
+					  	<div class="form-group">
+					  		<label for="updateUsertype">用户类型</label>
+					  			<label class="radio-inline">
+						  			<input type="radio" name="usertype" id="updateUsertype1" value="管理员">管理员
+								</label>
+							<label class="radio-inline">
+						  		<input type="radio" name="usertype" id="addUsertype2" value="经理">经理
+							</label>
+							<label class="radio-inline">
+						  		<input type="radio" name="usertype" id="addUsertype3" value="普通用户">普通用户
+							</label>
+					  	</div>	
+					</form>
+	      		</div>
 
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        	<button type="button" class="btn btn-primary btn-update-admin">添加</button>
+		      	</div>
+		    </div>
+	  	</div>
+	</div>
 
 
 
@@ -179,5 +231,6 @@
 	<script type="text/javascript" src="/lib/jquery/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/common/header.js"></script>
+	<script type="text/javascript" src="/js/admin/index.js"></script>
 </body>
 </html>

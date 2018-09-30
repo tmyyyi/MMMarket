@@ -6,7 +6,7 @@ var router = express.Router();
 router.post('/login',UserService.login);
 
 // 注销
-router.get('/logout');
+router.get('/logout',UserService.logout);
 
 
 module.exports = router;

@@ -1,5 +1,7 @@
 function Header(){
 	this.createDom();
+	this.loginUser();
+	this.addListener();
 }
 
 //头部和侧面的布局DOM节点
@@ -31,9 +33,9 @@ Header.listTemplate = `
 			  		<a href="#" class="list-group-item active">功能列表</a>
 			  		<a href="#" class="list-group-item"><img src="/img/zd.png">账单管理</a>
 			  		<a href="#" class="list-group-item"><img src="/img/gys.png">供应商管理</a>
-			  		<a href="/html/usermanage.html" class="list-group-item"><img src="/img/yh.png">用户管理</a>
+			  		<a href="/html/usermanage.html" class="list-group-item usermanage"><img src="/img/yh.png">用户管理</a>
 			 	 	<a href="/html/updatePwd.html" class="list-group-item"><img src="/img/mm.png">密码管理</a>
-			 	 	<a href="#" class="list-group-item"></img src="img/tc.png">退出系统</a>
+			 	 	<a href="#" class="list-group-item beybye"></img src="img/tc.png">退出系统</a>
 				</div>`;
 
 $.extend(Header.prototype,{
@@ -42,6 +44,37 @@ $.extend(Header.prototype,{
 		//把基本样式追加到 body里
 		$(Header.navTemplate).appendTo("header");
 		$(Header.listTemplate).appendTo(".left");
+	},
+	//加载用户登录信息
+	loginUser(){
+		//从sessionStorage  中获取登录成功的用户信息
+		let user = sessionStorage.loginUser;
+		if(!user) //没有登录成功的用户，结束函数调用
+			return;
+
+		//还原解析为JS中的对象
+		user = JSON.parse(user);
+		$(".reg-login-link").hide()
+									.next(".welcome-logout-link")
+									.removeClass("hidden")
+									.find("a:first").text("欢迎:" + user.username);
+	},
+
+	//事件监听
+	addListener(){
+		//点击“注销，退出登录”链接，退出登录
+		$(".logout-link").on("click",this.logoutHandler);
+		$(".beybye").on("click",this.logoutHandler);
+	},
+	//注销处理
+	logoutHandler(){
+		//访问后端注销的接口
+		$.get("/api/user/logout",()=>{
+			//清除sessionStorage中保存的数据
+			sessionStorage.removeItem("loginUser");
+			location.reload();
+		})
+
 	}
 
 });

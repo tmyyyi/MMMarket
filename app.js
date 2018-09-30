@@ -7,6 +7,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminsRouter = require('./routes/admins');
 
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(session({
 
 app.use('/', indexRouter);//访问项目"/"根的资源
 app.use('/api/user', usersRouter); //访问项目"/api/user"目录的资源
+app.use('/api/admin',adminsRouter);//访问项目"/api/user"目录的资源
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
