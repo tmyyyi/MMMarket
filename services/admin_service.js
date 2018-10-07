@@ -44,8 +44,15 @@ const AdminService = {
 	//更新管理员信息
 	update(req,res,next){
 		//获取条件
-
+		const {_id,usercode,username,usersex,birth,tel,usertype} = req.body;
 		//更新
+		AdminDao.updateAdm({_id,usercode,username,usersex,birth,tel,usertype})
+								.then((data)=>{
+									res.json({res_code: 1,res_error: "",res_body: {data}});
+								})
+								.catch((err)=>{
+									res.json({res_code: 0,res_error: err,res_body: {}});
+								})
 	}
 }
 

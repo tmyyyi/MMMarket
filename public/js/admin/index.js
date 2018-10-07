@@ -20,7 +20,7 @@ $.extend(Admin.prototype,{
 			let html = "";
 			data.res_body.data.forEach((curr,index)=>{
 				html +=`<tr>
-							<td>${curr.usercode}</td>
+							<td>${curr.usercode}<span class="hidden">${curr._id}</span></td>
 							<td>${curr.username}</td>
 							<td>${curr.usersex}</td>
 							<td>${curr.birth}</td>
@@ -30,7 +30,6 @@ $.extend(Admin.prototype,{
 								<a href="" data-toggle="modal" data-target="#updateUserModal"><img src="/img/updata.png"></a>
 								<a href="javascript:void(0);"><img src="/img/delete.png"></a>
 							</td>
-							<span class="hidden">${curr._id}</span>
 						</tr>`;
 			});
 			$(".usermanage-table tbody").html(html);	
@@ -46,7 +45,7 @@ $.extend(Admin.prototype,{
 		//删除管理员
 		$(".usermanage-table tbody").on("click","a:nth-child(3)",this.delUserHandler);
 		//修改管理员
-		$(".btn-update-admin").on("click",this.updateUserHandler);
+		$(".usermanage-table tbody").on("click","a:nth-child(2)",this.updateUserHandler);
 
 	},
 	//点击翻页处理
@@ -96,26 +95,38 @@ $.extend(Admin.prototype,{
 	},
 	//更新管理员信息
 	updateUserHandler(){
-		const usercode =  $(this).parent().parent().find("td:first").text();
+		const id = $(this).parent().parent().find("span").text();
+		
+		const usercode =  $(this).parent().parent().find("td:first").html();
 		const username =  $(this).parent().parent().find("td:nth-child(2)").text();
 		const usersex =  $(this).parent().parent().find("td:nth-child(3)").text();
 		const birth =  $(this).parent().parent().find("td:nth-child(4)").text();
 		const tel =  $(this).parent().parent().find("td:nth-child(5)").text();
 		const usertype =  $(this).parent().parent().find("td:nth-child(6)").text();
+	 
 
-		$("#updateUserCode").val(usercode);
+		$("#updateUserCode").val(usercode.split("<")[0]);
 		$("#updateUsername").val(username);
 		$("#updateUsersex").val(usersex);
 		$("#updateUserbirth").val(birth);
 		$("#updateUsertel").val(tel);
-		$(".radio-inline").val(usertype);
 
-		const url = "/api/admin/updata";
-		const id = $(this).parent().parent().find("span").text();
-		formDate = $(".add-user-form").serialize();
-		console.log(formDate);
+		$(".btn-update-admin").on("click",()=>{
+			const url = "/api/admin/update";
+			const id=$(this).parent().parent().find("span").text();
+			// const formData = new FormData($(".update-user-form")[0]);	
+			let formDate = $(".update-user-form").serialize();
+			formDate+="&_id="+id;
+			$.post(url,formDate,(data)=>{
+				console.log(data);
+				window.location.reload();
+			});
+			$("#updateUserModal").modal("hide");
+		})
+		
+		
 
-		// $.post(url,)
+		
 
 	}
 

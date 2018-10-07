@@ -14,8 +14,8 @@ const AdminDao = {
 	removeAdm(removeId){
 		return Admin.deleteOne(removeId);
 	},
-	updateAdm(){
-		
+	updateAdm(condition){
+		return Admin.findByIdAndUpdate({_id:condition._id},condition);
 	}
 }
 
